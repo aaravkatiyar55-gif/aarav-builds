@@ -10,6 +10,10 @@
 | Small screen layout | 360px-wide browser viewport | Pass — no horizontal overflow observed |
 | Project filters | Select each filter using mouse and keyboard | Pass — one matching project shown, then both restored |
 
+## Deployment note
+
+After adding the filters, GitHub Pages initially served updated HTML with a cached JavaScript file in the browser. The asset URLs now include a small version string so a deployment with changed CSS or JavaScript receives the matching files.
+
 ## Before each public update
 
 1. Load the live URL in a fresh browser page.
