@@ -20,6 +20,25 @@ A personal site for sharing the projects I am making and the web-development ski
 
 Open `index.html` in a browser. No build step or package installation is needed.
 
+For a small local server during testing:
+
+```powershell
+python -m http.server 4173 --bind 127.0.0.1
+```
+
+Then open `http://127.0.0.1:4173/`.
+
+## Testing
+
+The first local check covered:
+
+- JavaScript syntax with `node --check script.js`
+- Theme toggle changes and theme persistence after refresh
+- The note button updates the displayed note and its status message
+- A 360px-wide browser viewport with no horizontal page overflow
+
+The deployed-site checks will be added after GitHub Pages is live.
+
 ## Deployment
 
 The public deployment URL will be added here after the site is published.

@@ -1,0 +1,17 @@
+# Aarav Builds test notes
+
+## Local checks
+
+| Check | How it was tested | Result |
+| --- | --- | --- |
+| JavaScript syntax | `node --check script.js` | Pass |
+| Theme preference | Toggle the theme, refresh the page | Pass — selected theme remains |
+| Note button | Activate “Show a different note” | Pass — quote changes and status text updates |
+| Small screen layout | 360px-wide browser viewport | Pass — no horizontal overflow observed |
+
+## Before each public update
+
+1. Load the live URL in a fresh browser page.
+2. Test navigation, theme toggle, and note button with keyboard and mouse.
+3. Check a phone-width layout and a desktop-width layout.
+4. Keep project links and README claims matched to the live site.
