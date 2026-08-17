@@ -13,7 +13,7 @@
 
 ## Deployment note
 
-After adding the filters, GitHub Pages initially served updated HTML with a cached JavaScript file in the browser. The asset URLs now include a small version string so a deployment with changed CSS or JavaScript receives the matching files.
+After adding the filters, GitHub Pages initially served updated HTML with a cached JavaScript file in the browser. The CSS and JavaScript URLs include a small release version string; this value is bumped whenever those files change so a deployment receives matching assets.
 
 ## Before each public update
 
