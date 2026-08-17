@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aarav's personal space for sharing projects, experiments, and what he is learning."
+    />
+    <title>Aarav Builds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Aarav Builds home">AARAV<span>_</span>BUILDS</a>
+      <nav aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#learning">Learning</a>
+        <a href="#notes">Notes</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme">
+        <span aria-hidden="true">◐</span> Theme
+      </button>
+    </header>
+
+    <main id="main-content">
+      <section class="intro" id="top" aria-labelledby="intro-title">
+        <p class="eyebrow">PERSONAL SITE / AUG 2026</p>
+        <div class="intro-grid">
+          <div>
+            <h1 id="intro-title">I like turning <em>curiosity</em> into small, useful things.</h1>
+            <p class="intro-copy">
+              Hi, I’m Aarav — a Class 10 student learning by building websites, experiments, and tools one feature at a time.
+            </p>
+            <a class="primary-link" href="#projects">See what I’m making <span aria-hidden="true">↓</span></a>
+          </div>
+          <aside class="status-card" aria-label="Current status">
+            <p class="status-label">CURRENTLY</p>
+            <p class="status-main">Building in public,<br />learning the basics properly.</p>
+            <div class="status-footer"><span class="pulse" aria-hidden="true"></span> Open to learning</div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="eyebrow">01 / BUILD LOG</p>
+          <h2 id="projects-title">Things I’ve been working on</h2>
+        </div>
+        <div class="project-list">
+          <article class="project-row project-row--featured">
+            <div class="project-number">01</div>
+            <div>
+              <p class="project-type">BROWSER DASHBOARD</p>
+              <h3>Focus Orbit</h3>
+              <p>A space-inspired new-tab dashboard with a daily focus field, persistent tasks, quick links, theme choices, and a NASA image panel.</p>
+            </div>
+            <a class="project-link" href="https://aaravkatiyar55-gif.github.io/focus-orbit-new-tab/" target="_blank" rel="noreferrer">Open demo <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-row">
+            <div class="project-number">02</div>
+            <div>
+              <p class="project-type">SLACK BOT</p>
+              <h3>Aarav Ping Bot</h3>
+              <p>A beginner-friendly Slack Bolt project with two slash commands and a threaded reply when the bot is mentioned.</p>
+            </div>
+            <a class="project-link" href="https://github.com/aaravkatiyar55-gif/aarav-ping-bot" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" id="learning" aria-labelledby="learning-title">
+        <div class="section-heading">
+          <p class="eyebrow">02 / LEARNING MAP</p>
+          <h2 id="learning-title">What I’m practising right now</h2>
+        </div>
+        <ul class="learning-list" aria-label="Current learning topics">
+          <li><span>01</span> JavaScript fundamentals <strong>in progress</strong></li>
+          <li><span>02</span> APIs and useful error states <strong>practising</strong></li>
+          <li><span>03</span> Responsive CSS layouts <strong>building</strong></li>
+          <li><span>04</span> Git, GitHub, and deployment <strong>shipping</strong></li>
+        </ul>
+      </section>
+
+      <section class="section notes-section" id="notes" aria-labelledby="notes-title">
+        <div class="section-heading">
+          <p class="eyebrow">03 / SMALL NOTE</p>
+          <h2 id="notes-title">One rule I’m trying to keep</h2>
+        </div>
+        <blockquote>
+          “Make the next version clearer than the last one.”
+        </blockquote>
+        <p class="note-copy">That means testing features, writing down what changed, and keeping the difficult parts understandable enough to revisit later.</p>
+        <button class="note-button" type="button">Show a different note</button>
+        <p class="note-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made as a learning project by Aarav.</p>
+      <a href="https://github.com/aaravkatiyar55-gif" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
