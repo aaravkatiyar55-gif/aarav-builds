@@ -22,16 +22,18 @@
     <header class="site-header">
       <a class="wordmark" href="#top" aria-label="Aarav Builds home">AARAV<span>_</span>BUILDS</a>
       <nav aria-label="Primary navigation">
-        <a href="#projects">Projects</a>
-        <a href="#learning">Learning</a>
-        <a href="#notes">Notes</a>
+        <a href="#projects" data-section-link="projects">Projects</a>
+        <a href="#learning" data-section-link="learning">Learning</a>
+        <a href="#notes" data-section-link="notes">Notes</a>
       </nav>
       <div class="header-controls">
         <button class="reading-toggle" type="button" aria-pressed="false">Text +</button>
         <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme">
           <span aria-hidden="true">◐</span> Theme
         </button>
+        <button class="preferences-reset" type="button">Reset view</button>
       </div>
+      <p class="preferences-status" role="status" aria-live="polite"></p>
     </header>
 
     <main id="main-content">
@@ -66,7 +68,7 @@
             <p class="filter-status" role="status" aria-live="polite"></p>
           </div>
         </div>
-        <div class="project-list">
+        <div class="project-list" id="project-list">
           <article class="project-row project-row--featured" data-project-type="browser">
             <div class="project-number">01</div>
             <div>

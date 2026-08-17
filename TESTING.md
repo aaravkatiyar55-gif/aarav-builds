@@ -10,6 +10,9 @@
 | Note button | Activate “Show a different note” | Pass — quote changes and status text updates |
 | Small screen layout | 360px-wide browser viewport | Pass — no horizontal overflow observed |
 | Project filters | Select each filter using mouse and keyboard | Pass — one matching project shown, then both restored |
+| Shareable project filters | Load `?filter=slack`, switch to Everything, then use browser Back | Pass — matching project, URL, and status restore correctly |
+| Current-section navigation | Choose Notes from the header navigation | Pass — the page moves to Notes and the header link gets `aria-current` |
+| Reset view | Set dark theme and larger text, then choose Reset view | Pass — default light theme and text size return with a status message |
 | Deployed mobile layout | 360px-wide public page | Pass — no horizontal overflow observed |
 | Deployed keyboard start | Reload, then press Tab | Pass — the skip link receives first focus |
 
