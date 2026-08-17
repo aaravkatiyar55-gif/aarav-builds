@@ -1,17 +1,23 @@
 # Aarav Builds
 
-A personal site for sharing the projects I am making and the web-development skills I am practising.
+A small personal build journal for recording projects I am learning from.
 
-## What is on the site?
+## Live site
 
-- An introduction and current learning focus
-- A build log linking to real projects
-- A short learning map
-- An interactive theme switcher that remembers the selected theme
-- A text-size preference that remembers a more comfortable reading size
-- A small note button that changes the displayed learning reminder
+https://aaravkatiyar55-gif.github.io/aarav-builds/
 
-## Technologies
+## What is on the site
+
+- Short build notes for Focus Orbit and Aarav Ping Bot.
+- A plain list of topics I am currently learning.
+- A compact about section for the next set of notes.
+- An optional saved light/dark theme toggle.
+
+## Why I made it
+
+I wanted one place to write down what a project was trying to solve, what changed, and what I learned while making it. This is not a general portfolio or a project-management dashboard; it is a small record I can update as I build more things.
+
+## Technology
 
 - HTML
 - CSS
@@ -19,9 +25,7 @@ A personal site for sharing the projects I am making and the web-development ski
 
 ## Run locally
 
-Open `index.html` in a browser. No build step or package installation is needed.
-
-For a small local server during testing:
+Open `index.html` in a browser, or run this from the project folder:
 
 ```powershell
 python -m http.server 4173 --bind 127.0.0.1
@@ -31,23 +35,15 @@ Then open `http://127.0.0.1:4173/`.
 
 ## Testing
 
-The first local check covered:
+The current manual checks cover the page structure, navigation links, saved theme toggle, keyboard activation, 320px/768px/desktop layout, and a fresh GitHub Pages runtime check. Full commands and check results are in [TESTING.md](TESTING.md).
 
-- JavaScript syntax with `node --check script.js`
-- Theme toggle changes and theme persistence after refresh
-- The note button updates the displayed note and its status message
-- A 360px-wide browser viewport with no horizontal page overflow
+## Limitations
 
-The deployed-site checks will be added after GitHub Pages is live.
-
-## Deployment
-
-The site is published with GitHub Pages:
-
-[https://aaravkatiyar55-gif.github.io/aarav-builds/](https://aaravkatiyar55-gif.github.io/aarav-builds/)
-
-The deployed page was opened in a fresh browser page. Navigation, the theme toggle, theme persistence after refresh, and the note button were tested on the public URL.
+- This is a static site.
+- There is no CMS.
+- Project information is updated manually.
+- There are no user accounts or cross-device sync.
 
 ## AI usage
 
-I used OpenAI Codex as a coding assistant for planning, implementation support, and testing guidance. I chose the site purpose and reviewed the project direction; the site will only claim features that are actually present and tested.
+OpenAI Codex assisted with planning, implementation support, debugging, and testing guidance. I used reviewer feedback to revise the site’s structure, styling, and content. This README and the site only claim features that were actually verified.
