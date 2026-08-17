@@ -21,12 +21,15 @@ const notes = [
 function applyTheme(theme) {
   const isDark = theme === 'dark';
   root.classList.toggle('dark', isDark);
-  themeButton.setAttribute('aria-pressed', String(isDark));
-  themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} theme`);
+  if (themeButton) {
+    themeButton.setAttribute('aria-pressed', String(isDark));
+    themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} theme`);
+  }
 }
 
 function applyReadingSize(isComfortable) {
   root.classList.toggle('comfortable-copy', isComfortable);
+  if (!readingButton) return;
   readingButton.setAttribute('aria-pressed', String(isComfortable));
   readingButton.textContent = isComfortable ? 'Text −' : 'Text +';
 }
@@ -35,34 +38,42 @@ const savedTheme = localStorage.getItem('aarav-builds-theme');
 applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
 applyReadingSize(localStorage.getItem('aarav-builds-reading-size') === 'comfortable');
 
-themeButton.addEventListener('click', () => {
-  const nextTheme = root.classList.contains('dark') ? 'light' : 'dark';
-  localStorage.setItem('aarav-builds-theme', nextTheme);
-  applyTheme(nextTheme);
-});
+if (themeButton) {
+  themeButton.addEventListener('click', () => {
+    const nextTheme = root.classList.contains('dark') ? 'light' : 'dark';
+    localStorage.setItem('aarav-builds-theme', nextTheme);
+    applyTheme(nextTheme);
+  });
+}
 
-readingButton.addEventListener('click', () => {
-  const nextComfortableSize = !root.classList.contains('comfortable-copy');
-  localStorage.setItem('aarav-builds-reading-size', nextComfortableSize ? 'comfortable' : 'default');
-  applyReadingSize(nextComfortableSize);
-});
+if (readingButton) {
+  readingButton.addEventListener('click', () => {
+    const nextComfortableSize = !root.classList.contains('comfortable-copy');
+    localStorage.setItem('aarav-builds-reading-size', nextComfortableSize ? 'comfortable' : 'default');
+    applyReadingSize(nextComfortableSize);
+  });
+}
 
-resetButton.addEventListener('click', () => {
-  localStorage.removeItem('aarav-builds-theme');
-  localStorage.removeItem('aarav-builds-reading-size');
-  applyTheme('light');
-  applyReadingSize(false);
-  preferencesStatus.textContent = 'Theme and text size reset to the default view.';
-});
+if (resetButton) {
+  resetButton.addEventListener('click', () => {
+    localStorage.removeItem('aarav-builds-theme');
+    localStorage.removeItem('aarav-builds-reading-size');
+    applyTheme('light');
+    applyReadingSize(false);
+    preferencesStatus.textContent = 'Theme and text size reset to the default view.';
+  });
+}
 
-noteButton.addEventListener('click', () => {
-  const current = document.querySelector('blockquote');
-  const currentText = current.textContent.replace(/[“”]/g, '');
-  const options = notes.filter((note) => note !== currentText);
-  const nextNote = options[Math.floor(Math.random() * options.length)];
-  current.textContent = `“${nextNote}”`;
-  noteStatus.textContent = 'Note updated.';
-});
+if (noteButton) {
+  noteButton.addEventListener('click', () => {
+    const current = document.querySelector('blockquote');
+    const currentText = current.textContent.replace(/[“”]/g, '');
+    const options = notes.filter((note) => note !== currentText);
+    const nextNote = options[Math.floor(Math.random() * options.length)];
+    current.textContent = `“${nextNote}”`;
+    noteStatus.textContent = 'Note updated.';
+  });
+}
 
 function getRequestedFilter() {
   const requestedFilter = new URLSearchParams(window.location.search).get('filter');
@@ -70,6 +81,7 @@ function getRequestedFilter() {
 }
 
 function applyProjectFilter(filter, shouldUpdateUrl = false) {
+  if (!filterStatus) return;
   let visibleCount = 0;
 
   filterButtons.forEach((button) => {
@@ -97,17 +109,19 @@ function applyProjectFilter(filter, shouldUpdateUrl = false) {
   }
 }
 
-filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    applyProjectFilter(button.dataset.filter, true);
+if (filterButtons.length) {
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      applyProjectFilter(button.dataset.filter, true);
+    });
   });
-});
 
-window.addEventListener('popstate', () => {
+  window.addEventListener('popstate', () => {
+    applyProjectFilter(getRequestedFilter());
+  });
+
   applyProjectFilter(getRequestedFilter());
-});
-
-applyProjectFilter(getRequestedFilter());
+}
 
 function updateCurrentSection(sectionId) {
   sectionLinks.forEach((link) => {
@@ -120,7 +134,7 @@ function updateCurrentSection(sectionId) {
   });
 }
 
-if ('IntersectionObserver' in window) {
+if (sectionLinks.length && 'IntersectionObserver' in window) {
   const sectionObserver = new IntersectionObserver(
     (entries) => {
       const currentEntry = entries
