@@ -10,6 +10,8 @@
 | Note button | Activate “Show a different note” | Pass — quote changes and status text updates |
 | Small screen layout | 360px-wide browser viewport | Pass — no horizontal overflow observed |
 | Project filters | Select each filter using mouse and keyboard | Pass — one matching project shown, then both restored |
+| Deployed mobile layout | 360px-wide public page | Pass — no horizontal overflow observed |
+| Deployed keyboard start | Reload, then press Tab | Pass — the skip link receives first focus |
 
 ## Deployment note
 
