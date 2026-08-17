@@ -41,7 +41,11 @@ The deployed-site checks will be added after GitHub Pages is live.
 
 ## Deployment
 
-The public deployment URL will be added here after the site is published.
+The site is published with GitHub Pages:
+
+[https://aaravkatiyar55-gif.github.io/aarav-builds/](https://aaravkatiyar55-gif.github.io/aarav-builds/)
+
+The deployed page was opened in a fresh browser page. Navigation, the theme toggle, theme persistence after refresh, and the note button were tested on the public URL.
 
 ## AI usage
 
