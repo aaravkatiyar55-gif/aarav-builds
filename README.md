@@ -8,6 +8,7 @@ A personal site for sharing the projects I am making and the web-development ski
 - A build log linking to real projects
 - A short learning map
 - An interactive theme switcher that remembers the selected theme
+- A text-size preference that remembers a more comfortable reading size
 - A small note button that changes the displayed learning reminder
 
 ## Technologies

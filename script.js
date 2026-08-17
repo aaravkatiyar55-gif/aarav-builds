@@ -1,5 +1,6 @@
 const root = document.body;
 const themeButton = document.querySelector('.theme-toggle');
+const readingButton = document.querySelector('.reading-toggle');
 const noteButton = document.querySelector('.note-button');
 const noteStatus = document.querySelector('.note-status');
 const filterButtons = document.querySelectorAll('.filter-button');
@@ -20,13 +21,26 @@ function applyTheme(theme) {
   themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} theme`);
 }
 
+function applyReadingSize(isComfortable) {
+  root.classList.toggle('comfortable-copy', isComfortable);
+  readingButton.setAttribute('aria-pressed', String(isComfortable));
+  readingButton.textContent = isComfortable ? 'Text −' : 'Text +';
+}
+
 const savedTheme = localStorage.getItem('aarav-builds-theme');
 applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+applyReadingSize(localStorage.getItem('aarav-builds-reading-size') === 'comfortable');
 
 themeButton.addEventListener('click', () => {
   const nextTheme = root.classList.contains('dark') ? 'light' : 'dark';
   localStorage.setItem('aarav-builds-theme', nextTheme);
   applyTheme(nextTheme);
+});
+
+readingButton.addEventListener('click', () => {
+  const nextComfortableSize = !root.classList.contains('comfortable-copy');
+  localStorage.setItem('aarav-builds-reading-size', nextComfortableSize ? 'comfortable' : 'default');
+  applyReadingSize(nextComfortableSize);
 });
 
 noteButton.addEventListener('click', () => {
