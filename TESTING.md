@@ -17,7 +17,12 @@
 
 ## Deployed checks
 
-After a GitHub Pages build completes, open a fresh public page and verify the current asset versions, build-note layout, theme control, project links, mobile layout, and browser console.
+- GitHub Pages run `32031730043` deployed commit `93586a5` successfully.
+- A fresh public page showed the build-journal heading, `style.css?v=20260817-5`, no external Google fonts, and no old portfolio hero copy.
+- At 375px, there was no horizontal overflow.
+- Build notes, What I’m learning, and About navigation targets worked.
+- The theme button worked with Enter, had visible focus, persisted after refresh, and produced no browser console errors.
+- Focus Orbit and Aarav Ping Bot source links each returned HTTP 200 during the current check.
 
 ## Testing boundary
 
