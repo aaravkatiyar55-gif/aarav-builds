@@ -8,6 +8,7 @@
 | Theme preference | Toggle the theme, refresh the page | Pass — selected theme remains |
 | Note button | Activate “Show a different note” | Pass — quote changes and status text updates |
 | Small screen layout | 360px-wide browser viewport | Pass — no horizontal overflow observed |
+| Project filters | Select each filter using mouse and keyboard | Pass — one matching project shown, then both restored |
 
 ## Before each public update
 

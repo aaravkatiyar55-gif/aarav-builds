@@ -68,8 +68,14 @@ h1 em { color: var(--accent); font-style: italic; }
 .section-heading { display: grid; grid-template-columns: .75fr 2fr; gap: 1rem; margin-bottom: 2.5rem; }
 .section-heading .eyebrow { margin: .25rem 0 0; }
 h2 { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 4.3rem); letter-spacing: -.04em; }
+.project-filters { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.25rem; }
+.filter-button { border: 1px solid var(--line); border-radius: 999px; padding: .35rem .65rem; background: transparent; color: var(--ink); cursor: pointer; font-size: .75rem; font-weight: 700; }
+.filter-button:hover, .filter-button:focus-visible { border-color: var(--accent-dark); color: var(--accent-dark); }
+.filter-button.is-active { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.filter-status { min-height: 1.4em; margin: .65rem 0 0; color: var(--accent-dark); font-size: .82rem; }
 .project-list { border-top: 1px solid var(--ink); }
 .project-row { display: grid; grid-template-columns: .2fr 1.25fr .45fr; gap: 1rem; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid var(--line); }
+.project-row[hidden] { display: none; }
 .project-row--featured { background: linear-gradient(90deg, transparent, var(--paper-strong), transparent); }
 .project-number { color: var(--accent); font: .78rem var(--mono); }
 .project-type { margin: 0 0 .4rem; font-size: .66rem; }

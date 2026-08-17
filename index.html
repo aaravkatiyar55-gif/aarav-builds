@@ -53,10 +53,18 @@
       <section class="section projects-section" id="projects" aria-labelledby="projects-title">
         <div class="section-heading">
           <p class="eyebrow">01 / BUILD LOG</p>
-          <h2 id="projects-title">Things I’ve been working on</h2>
+          <div>
+            <h2 id="projects-title">Things I’ve been working on</h2>
+            <div class="project-filters" role="group" aria-label="Filter projects by type">
+              <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Everything</button>
+              <button class="filter-button" type="button" data-filter="browser" aria-pressed="false">Browser project</button>
+              <button class="filter-button" type="button" data-filter="slack" aria-pressed="false">Slack project</button>
+            </div>
+            <p class="filter-status" role="status" aria-live="polite"></p>
+          </div>
         </div>
         <div class="project-list">
-          <article class="project-row project-row--featured">
+          <article class="project-row project-row--featured" data-project-type="browser">
             <div class="project-number">01</div>
             <div>
               <p class="project-type">BROWSER DASHBOARD</p>
@@ -65,7 +73,7 @@
             </div>
             <a class="project-link" href="https://aaravkatiyar55-gif.github.io/focus-orbit-new-tab/" target="_blank" rel="noreferrer">Open demo <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="project-row">
+          <article class="project-row" data-project-type="slack">
             <div class="project-number">02</div>
             <div>
               <p class="project-type">SLACK BOT</p>

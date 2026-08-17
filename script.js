@@ -2,6 +2,9 @@ const root = document.body;
 const themeButton = document.querySelector('.theme-toggle');
 const noteButton = document.querySelector('.note-button');
 const noteStatus = document.querySelector('.note-status');
+const filterButtons = document.querySelectorAll('.filter-button');
+const projectRows = document.querySelectorAll('[data-project-type]');
+const filterStatus = document.querySelector('.filter-status');
 
 const notes = [
   'Small features count when they solve a real problem.',
@@ -33,4 +36,25 @@ noteButton.addEventListener('click', () => {
   const nextNote = options[Math.floor(Math.random() * options.length)];
   current.textContent = `“${nextNote}”`;
   noteStatus.textContent = 'Note updated.';
+});
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    let visibleCount = 0;
+
+    filterButtons.forEach((item) => {
+      const isCurrent = item === button;
+      item.classList.toggle('is-active', isCurrent);
+      item.setAttribute('aria-pressed', String(isCurrent));
+    });
+
+    projectRows.forEach((row) => {
+      const shouldShow = filter === 'all' || row.dataset.projectType === filter;
+      row.hidden = !shouldShow;
+      if (shouldShow) visibleCount += 1;
+    });
+
+    filterStatus.textContent = `${visibleCount} ${visibleCount === 1 ? 'project' : 'projects'} shown.`;
+  });
 });
